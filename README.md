@@ -1,15 +1,5 @@
 # node-example
 
-## 栗子列表
-
-  - node-1: [http 系统模块使用](https://github.com/jianxiaoBai/node-example/tree/master/node-1)
-  - node-2: [fs文件模块](https://github.com/jianxiaoBai/node-example/tree/master/node-2)
-  - node-3: [http数据解析-get/post](https://github.com/jianxiaoBai/node-example/tree/master/node-3)
-  - node-4: [融合 get/post、文件请求](https://github.com/jianxiaoBai/node-example/tree/master/node-4)
-  - node-5: [简易 httpServer 搭建(注册/登录)](https://github.com/jianxiaoBai/node-example/tree/master/node-5)
-  - node-6: [系统模块介绍](https://github.com/jianxiaoBai/node-example/tree/master/node-6)
-  - node-7: [Express 框架](https://github.com/jianxiaoBai/node-example/tree/master/node-7)
-
 ## 模块信息
 
   - bodyParser => 只能解析 POST 数据
@@ -46,7 +36,9 @@
 
   - 通过 `data.toString()` 转换 Buffer 数据
   - GET 数据在 url 中并且数据 < 32K
+  - GET 传参时不会触发 `data` 事件
   - POST 数据不再 url 中 < 1G
+  - POST 传参数据量较大时会多次触发 `data` 事件依次传递数据
 
 ## 路由
 
