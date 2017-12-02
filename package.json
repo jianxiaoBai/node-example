@@ -1,0 +1,31 @@
+{
+  "name": "node-example",
+  "version": "1.0.0",
+  "description": "## 栗子列表",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jianxiaoBai/node-example.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jianxiaoBai/node-example/issues"
+  },
+  "homepage": "https://github.com/jianxiaoBai/node-example#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "cookie-parser": "^1.4.3",
+    "cookie-session": "^2.0.0-beta.3",
+    "express": "^4.16.2",
+    "express-static": "^1.2.5",
+    "jquery": "^3.2.1"
+  },
+  "devDependencies": {
+    "ejs": "^2.5.7",
+    "jade": "^1.11.0"
+  }
+}

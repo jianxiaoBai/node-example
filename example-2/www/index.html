@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script src="./ajax.js"></script>
+</head>
+<body>
+  账户: <input type="text" name="user" id="user"><br/>
+  密码: <input type="text" name="pass" id="pass"><br/>
+  <button id="register">注册</button>
+  <button id="login">登录</button>
+</body>
+<script>
+  const user = document.getElementById('user')
+  const pass = document.getElementById('pass')
+  const register = document.getElementById('register')
+  const login = document.getElementById('login')
+
+  register.onclick = function () {
+    ajax({
+      url: '/user',
+      type: 'get',
+      data: {
+        type: 'register',
+        user: user.value,
+        pass: pass.value
+      },
+      success: function (data) {
+        alert(data)
+      }
+    })
+  }
+
+  login.onclick = function () {
+    ajax({
+      url: '/user',
+      type: 'post',
+      data: {
+        type: 'login',
+        user: user.value,
+        pass: pass.value
+      },
+      success: function (data) {
+        alert(data)
+      }
+    })
+  }
+</script>
+</html>

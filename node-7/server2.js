@@ -1,5 +1,5 @@
-const express=require('express');
-const expressStatic=require('express-static');
+const express = require('express');
+const expressStatic = require('express-static');
 
 var server=express();
 server.listen(8080);

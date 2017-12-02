@@ -1,0 +1,68 @@
+html
+  head
+    title
+    style(herf="a.css", rel="stylesheet")
+    //- style 书写方式没有高亮
+    //- style.
+    //-   * {
+    //-   margin: 0;
+    //-   padding: 0;
+    //-   }
+    //-   div {
+    //-     border: 1px solid #000;
+    //-   }
+    script
+      //- 非外部引入,渲染时会把 a.js 内容渲染此页面
+      include a.js
+    script.
+      window.onload = function () {
+        var btn = document.getElementById("box")
+        box.onclick = function () {
+          alert('你好啊')
+        }
+      }
+  body
+    //- class 与 style 比较特殊,可以采用数组或对象的方式写样式
+    #box(class=arr, style=json)
+      p.
+        dsad
+        sad dsf sdf
+      - var a = 111
+      - var b = 222
+      div 结果 #{a+b}
+      .aaa
+        //- 变量渲染方式
+        span #{name}
+        //- 此种变量渲染方式无法进行计算
+        span=name
+        //- "|" 意思是后面的内容不进行标签转换
+        div
+          | aaa
+          span 大时代
+          | bbb
+      ul
+        -for (var i = 0; i < arr.length; i++)
+          li=arr[i]
+      p=content
+      //- 原模原样输出
+      p!=content
+      //- 以 json 方式写属性的方式
+      div&attributes({ title: 'aaa', id: 'www' })
+      //- switch case
+      - var a = 1
+      if(a%2==0)
+        div(style={background:'red'}) 偶数
+      else
+        div(style={background:'green'}) 奇数
+
+      case a
+        when 0
+          div aaa
+        when 1
+          div bbb
+        when 2
+          div ccc
+        default
+          |不靠谱
+
+

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>仿登录注册</title>
+  <script src="ajax.js"></script>
+</head>
+<body>
+    用户: <input type="text" name="user" id="user"><br />
+    密码: <input type="text" name="pass" id="pass"><br />
+    <button id="register">注册</button>
+    <button id="login">登录</button>
+</body>
+<script>
+  var user = document.getElementById('user')
+  var pass = document.getElementById('pass')
+  var register = document.getElementById('register')
+  var login = document.getElementById('login')
+
+  register.onclick = function () {
+    ajax({
+      type: 'post',
+      url: '/user',
+      data: {
+        user: user.value,
+        pass: pass.value,
+        type: 'register',
+      },
+      success: function (data) {
+        // console.log(data)
+        alert(data)
+      }
+    })
+  }
+  login.onclick = function () {
+     ajax({
+      type: 'get',
+      url: '/user',
+      data: {
+        user: user.value,
+        pass: pass.value,
+        type: 'login',
+      },
+      success: function (data) {
+        // console.log(data)
+        alert(data)
+
+      }
+    })
+  }
+</script>
+</html>
